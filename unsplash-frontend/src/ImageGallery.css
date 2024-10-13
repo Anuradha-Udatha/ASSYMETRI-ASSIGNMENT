@@ -1,0 +1,56 @@
+/* src/ImageGallery.css */
+
+/* Main gallery container */
+.gallery {
+  display: grid; /* Using grid layout for the gallery */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 10px; /* Space between images */
+  padding: 10px; /* Padding around the gallery */
+}
+
+/* Popup styling */
+.popup {
+  position: fixed; /* Fixed positioning for overlay */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for overlay */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1000; /* On top of other elements */
+}
+
+/* Popup image styling */
+.popup img {
+  max-width: 90%; /* Limit image width */
+  max-height: 90%; /* Limit image height */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust columns for smaller screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Further adjustment for very small screens */
+  }
+}
+
+/* Optional styles for the images */
+.gallery img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Slightly rounded corners */
+  transition: transform 0.2s ease; /* Smooth transition for hover effect */
+  object-fit: cover; /* Ensures images cover the grid area properly */
+}
+
+/* Hover effect for images */
+.gallery img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
