@@ -50,11 +50,11 @@ const ImageGallery: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll); // Cleanup listener on unmount
   }, [loading]); // Add loading as a dependency
 
   return (
-    <div>
+    <div className="gallery"> {/* Add the gallery class here */}
       <Masonry columnsCount={3} gutter="10px">
         {images.map((image: Image, index: number) => ( // Specify type for image and use index
           <img
@@ -62,11 +62,11 @@ const ImageGallery: React.FC = () => {
             src={image.urls.small}
             alt={image.alt_description || 'Unsplash Image'}
             onClick={() => setPopupImage(image.urls.regular)} // Open image in popup
-            style={{ cursor: 'pointer' }}
+            className="gallery-image" // Use the class for styling
           />
         ))}
       </Masonry>
-      {loading && <p>Loading more images...</p>}
+      {loading && <p className="loading-text">Loading more images...</p>}
       {popupImage && (
         <div className="popup" onClick={() => setPopupImage(null)}>
           <img src={popupImage} alt="Popup" />

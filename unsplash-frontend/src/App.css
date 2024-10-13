@@ -1,8 +1,15 @@
 /* src/ImageGallery.css */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
   gap: 10px;
+}
+
+.gallery img {
+  width: 100%; /* Make images fill their grid cells */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: add rounded corners */
+  object-fit: cover; /* Ensure the image covers the grid area properly */
 }
 
 .popup {
@@ -19,19 +26,19 @@
 }
 
 .popup img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90%; /* Limit image width in the popup */
+  max-height: 90%; /* Limit image height in the popup */
 }
 
 /* Media Queries */
 @media (max-width: 600px) {
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
   }
 }
 
 @media (max-width: 400px) {
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Further adjust for very small screens */
   }
 }

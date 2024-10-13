@@ -3,9 +3,8 @@
 /* Main gallery container */
 .gallery {
   display: grid; /* Using grid layout for the gallery */
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
   gap: 10px; /* Space between images */
-  padding: 10px; /* Padding around the gallery */
+  width: 100%;
 }
 
 /* Popup styling */
@@ -31,13 +30,13 @@
 /* Media queries for responsiveness */
 @media (max-width: 600px) {
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust columns for smaller screens */
+    width: 100%;
   }
 }
 
 @media (max-width: 400px) {
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Further adjustment for very small screens */
+    width: 100%;
   }
 }
 
